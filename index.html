@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Final Assessment</title>
+</head>
+<style>
+
+    .container {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .right-side {
+        display: flex;
+        flex-direction: column;
+        margin-left: 25%;
+    }
+
+    form {
+        display: flex;
+        flex-direction: column;
+    }
+
+    button {
+
+        background-color: green;
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        display: inline-block;
+        font-size: 16px;
+    }
+
+
+
+</style>
+
+
+<body>
+    <div class="container">
+        <div class="left-side">
+            <form>
+                <label>Title</label><br>
+                <input id="title-input" type="text" class="title">
+                <input id="title-color" type="color" class="title"><br><br>
+
+                <textarea id="message-input" class="message" rows="4" cols="50"></textarea>
+                <input id="message-color" type="color" class="message"><br><br>
+
+                <button type="submit">Submit</button>
+            </form> 
+        </div>
+        <div class="right-side">
+            <h1 id="title-output"></h1>
+            <p id="message-output"></p>
+        </div>
+    </div>
+    
+    <script>
+
+        const titleInput = document.getElementById('title-input')
+        const messageInput = document.getElementById('message-input')
+        const titleOutput = document.getElementById('title-output')
+        const messageOutput = document.getElementById('message-output')
+        const titleColor = document.getElementById('title-color')
+        const messageColor = document.getElementById('message-color')
+
+        titleInput.addEventListener('input', updateTitleValue);
+        messageInput.addEventListener('input', updateMessageValue);
+        titleColor.addEventListener('input', updateTitleColor);
+        messageColor.addEventListener('input', updateMessageColor);
+
+        function updateTitleValue(e) {
+            titleOutput.textContent = e.target.value
+        }
+
+        function updateMessageValue(e) {
+            messageOutput.textContent = e.target.value
+        }
+
+        function updateTitleColor(e) {
+            titleOutput.style.color = e.target.value
+        }
+
+        function updateMessageColor(e) {
+            messageOutput.style.color = e.target.value
+        }
+
+
+
+    </script>
+</body>
+</html>
